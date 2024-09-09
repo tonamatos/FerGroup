@@ -7,6 +7,9 @@ cache/
 # VS code
 /.vscode
 
+# Tester notebooks
+tester.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
