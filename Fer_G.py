@@ -59,6 +59,9 @@ def FerGroup(colored_graph):
   nodes = colored_graph.nodes()
 
   # If graph is not fully colored, we assume all vertices are the same color.
+  if not hasattr(nodes[0], 'color'):
+    for node in colored_graph.nodes():
+      colored_graph.nodes[node]['color'] = 'black'
 
   n = len(nodes)
   alledges = combinations(nodes, 2)
@@ -71,8 +74,11 @@ def FerGroup(colored_graph):
   automorphisms = isFer(colored_graph, old_edge={0,1}, new_edge={0,1}, allIso=True)
   #print("Found",len(automorphisms),"automorphisms.")
   for iso in automorphisms:
-    iso_tuple = tuple(iso[i] for i in iso.keys())
-    fers[iso_tuple] = Fer(old_edge={0,1}, new_edge={0,1}, permutation=Perm(iso_tuple))
+    iso_tuple = tuple(iso[i] for i in range(len(iso)))
+    try:
+      fers[iso_tuple] = Fer(old_edge={0,1}, new_edge={0,1}, permutation=Perm(iso_tuple))
+    except:
+      print(iso_tuple)
 
   # Iterate over all possible edge-replacements. If feasible, add to hash_map.
   for old_edge in edges:

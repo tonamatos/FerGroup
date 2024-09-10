@@ -26,7 +26,7 @@ class Feasible_edge_replacement:
       return Feasible_edge_replacement._Individual_Fer({i + other, j + other}, {x + other, y + other})
 
     def __str__(self):
-      if self.isTrivial:
+      if self.isTrivial():
         return '(0 -> 0)'
       
       i, j = self.old_edge
@@ -92,7 +92,7 @@ class Feasible_edge_replacement:
     string = ''
     for ind_fer in self.sequence:
       string = string + str(ind_fer)
-    return f'{str(self.seq_perm):>24}' + ' : ' + string
+    return f'{str(self.seq_perm):>28}' + ' : ' + string
 
   def isTrivial(self):
     if self.sequence[0].isTrivial():
