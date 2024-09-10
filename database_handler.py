@@ -14,17 +14,18 @@ def db_write(conn, graph_g6, num_nodes, num_edges, is_connected, is_tree=None, i
                  is_connected,
                  is_tree,
                  is_local,
-                 is_global,fer)
+                 is_global,
+                 fer)
                   VALUES (?, ?, ?, ?, ?, ?, ?, ?)''',
                (graph_g6, num_nodes, num_edges, is_connected, is_tree, is_local, is_global, s_fer))
   conn.commit()
 
 def db_read(conn, id):
   cursor = conn.cursor()
-  cursor.execute('SELECT * FROM graphs WHERE graph_g6 = ?', (id,))
+  cursor.execute('SELECT * FROM graphs WHERE id = ?', (id,))
   row = cursor.fetchone()
   fer = row[-1]
   if fer:
     des_fer = pickle.loads(fer)
   
-  return row
+  return row[:-1], des_fer

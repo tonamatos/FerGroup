@@ -8,7 +8,7 @@ class Fer_group:
   '''
   def __init__(self, colored_graph):
     FGroup = FerGroup(colored_graph)
-    self.generators = FGroup.values() # Set of Fer objects.
+    self.generators = list(FGroup.values()) # Set of Fer objects.
 
   def __str__(self):
     if not self.generators:
