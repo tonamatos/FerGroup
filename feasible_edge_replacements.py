@@ -36,7 +36,6 @@ class Feasible_edge_replacement:
     def isTrivial(self):
       return self.old_edge == self.new_edge
 
-
     def _update(self, permutation):
       '''
       Updates the labels of the edge replacement according to the given permutation.

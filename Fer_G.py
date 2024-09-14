@@ -2,6 +2,45 @@ from itertools import combinations
 from networkx.algorithms import isomorphism
 from feasible_edge_replacements import Feasible_edge_replacement as Fer
 from sympy.combinatorics.permutations import Permutation as Perm
+from networkx import relabel_nodes
+
+def apply_perm_find_edges(graph, perm):
+  '''
+  Apply the perm Permutation to colored_graph. Assuming perm corresponds to a
+  one edge-replacement, will return the corresponding old_edge and new_edge.
+  '''
+  # Apply perm to graph
+  inv_perm = perm ** -1
+  node_mapping = {i: inv_perm(i) for i in range(len(graph))}
+  new_graph    = relabel_nodes(graph, node_mapping)
+
+  # Find changes edges
+  old_edges = [edge for edge in graph.edges() if edge not in new_graph.edges()]
+  new_edges = [edge for edge in new_graph.edges() if edge not in graph.edges()]
+
+  if len(old_edges)>1 or len(new_edges)>1:
+    raise ValueError("FerGroup_decoder: More than one edge was moved!")
+
+  old_edge = set(old_edges[0])
+  new_edge = set(new_edges[0])
+
+  return old_edge, new_edge
+
+def FerGroup_decoder(graph, encoded):
+  autom, nonaut  = encoded
+
+  # Extract automorphisms
+  fers = {}
+  for array in autom:
+    fers[tuple(array)] = Fer({0,1}, {0,1}, Perm(array))
+
+  # Find one edge-replacements for the remaining permutations
+  for array in nonaut:
+    perm = Perm(array)
+    old_edge, new_edge = apply_perm_find_edges(graph, perm)
+    fers[tuple(array)] = Fer(old_edge, new_edge, perm)
+  
+  return fers
 
 def edge_replace(graph, old_edge, new_edge):
   new_graph = graph.copy()
@@ -58,9 +97,9 @@ def FerGroup(colored_graph):
   edges = colored_graph.edges()
   nodes = colored_graph.nodes()
 
-  # If graph is not fully colored, we assume all vertices are the same color.
-  if not hasattr(nodes[0], 'color'):
-    for node in colored_graph.nodes():
+  # Nodes with missing color are defaulted to black.
+  for node in nodes:
+    if not hasattr(colored_graph.nodes[node], 'color'):
       colored_graph.nodes[node]['color'] = 'black'
 
   n = len(nodes)
@@ -78,7 +117,7 @@ def FerGroup(colored_graph):
     try:
       fers[iso_tuple] = Fer(old_edge={0,1}, new_edge={0,1}, permutation=Perm(iso_tuple))
     except:
-      print(iso_tuple)
+      print("Error",iso_tuple)
 
   # Iterate over all possible edge-replacements. If feasible, add to hash_map.
   for old_edge in edges:
