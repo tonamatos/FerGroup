@@ -1,23 +1,40 @@
 import sqlite3
 import pickle
+import networkx as nx
 
-def db_write(conn, graph_g6, num_nodes, num_edges, is_connected, is_tree=None, is_local=None, is_global=None, fer=None):
-  if fer:
-    s_fer = pickle.dumps(fer)
+def graph6_to_iso_invariants(graph6):
+  G = nx.from_graph6_bytes(graph6.encode())
+
+  degree_seq   = sorted([d for n, d in G.degree()], reverse=True)
+  triangle_seq = nx.triangles(G).values()
+
+  return degree_seq, triangle_seq
+
+def db_write(conn, graph6, degree_seq, triangle_seq, num_nodes, num_edges,
+             is_connected=None, is_tree=None, is_local=None, is_global=None,
+             fer_group_encoded=None):
+  
+  if fer_group_encoded:
+    fer = pickle.dumps(fer_group_encoded)
   else:
-    s_fer = None
+    fer = None
+    
   cursor = conn.cursor()
   cursor.execute('''INSERT INTO graphs
-                 (graph_g6,
+                 (graph6,
+                 degree_seq,
+                 triangle_seq,
                  num_nodes,
                  num_edges,
                  is_connected,
                  is_tree,
                  is_local,
                  is_global,
-                 fer)
+                 fer_group_encoded)
                   VALUES (?, ?, ?, ?, ?, ?, ?, ?)''',
-               (graph_g6, num_nodes, num_edges, is_connected, is_tree, is_local, is_global, s_fer))
+               (graph6, degree_seq, triangle_seq, num_nodes, num_edges,
+                is_connected, is_tree, is_local, is_global, fer))
+  
   conn.commit()
 
 def db_read(conn, id):
