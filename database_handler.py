@@ -2,15 +2,22 @@ import sqlite3
 import pickle
 import networkx as nx
 
-def graph6_to_iso_invariants(graph6):
+def graph6_to_iso_invariant(graph6):
+  '''
+  Computes the degree sequence and triangle sequence to create an isomorphism
+  invariant for quick lookup times. Equivalent to using nx.fast_could_be_iso.
+  '''
+  
   G = nx.from_graph6_bytes(graph6.encode())
 
-  degree_seq   = sorted([d for n, d in G.degree()], reverse=True)
-  triangle_seq = nx.triangles(G).values()
+  d = G.degree()
+  t = nx.triangles(G)
+  props = [[d, t[v]] for v, d in d]
+  props.sort()
 
-  return degree_seq, triangle_seq
+  return str(props)
 
-def db_write(conn, graph6, degree_seq, triangle_seq, num_nodes, num_edges,
+def db_write(conn, graph6, iso_invariant, num_nodes, num_edges,
              is_connected=None, is_tree=None, is_local=None, is_global=None,
              fer_group_encoded=None):
   
@@ -22,8 +29,7 @@ def db_write(conn, graph6, degree_seq, triangle_seq, num_nodes, num_edges,
   cursor = conn.cursor()
   cursor.execute('''INSERT INTO graphs
                  (graph6,
-                 degree_seq,
-                 triangle_seq,
+                 iso_invariant,
                  num_nodes,
                  num_edges,
                  is_connected,
@@ -31,8 +37,8 @@ def db_write(conn, graph6, degree_seq, triangle_seq, num_nodes, num_edges,
                  is_local,
                  is_global,
                  fer_group_encoded)
-                  VALUES (?, ?, ?, ?, ?, ?, ?, ?)''',
-               (graph6, degree_seq, triangle_seq, num_nodes, num_edges,
+                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+               (graph6, iso_invariant, num_nodes, num_edges,
                 is_connected, is_tree, is_local, is_global, fer))
   
   conn.commit()
