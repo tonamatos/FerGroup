@@ -1,5 +1,6 @@
 import pickle
 import networkx as nx
+from networkx.algorithms import isomorphism
 from fer_group import Fer_group
 import sqlite3
 
@@ -51,15 +52,59 @@ def db_write(conn, graph6, iso_invariant, num_nodes, num_edges,
   
   conn.commit()
 
-def db_fetch(graph6, iso_invariant):
-  conn = sqlite3.connect('databases/graphs.db')
+def db_fetch(graph):
+  '''
+  Attempts to find the networkx object graph in the database.
+  If it does, it returns the db row and the relabing,
+  in case an isomorphic copy was found instead.
+  '''
+  try:
+    conn = sqlite3.connect('databases/graphs.db')
+  except sqlite3.Error as e:
+    print(f"Error connecting to the database: {e}")
+    return
+  
   cursor = conn.cursor()
 
   # Try to find exact match
+  graph6 = nx.to_graph6_bytes(graph).decode('utf-8')[10:-1]
+
   cursor.execute('SELECT * FROM graphs WHERE graph6 = ?', (graph6,))
   row = cursor.fetchone()
   if row:
-    return row
-  
-  # Use isomorphism invariants to find good matches
-  
+    conn.close()
+
+    # The graph may be the same but the labeling must be computed
+    H = nx.from_graph6_bytes(row[1].encode())
+    GM = isomorphism.GraphMatcher(graph, H)
+    _ = GM.is_isomorphic()
+    iso_mapping = GM.mapping
+
+    print("Exact match found in database.")
+    return row, iso_mapping
+
+  # NOTE: Since graph6 is a canonization, everything below this line might never be executed
+
+  # Compute isomorphic invariants
+  inv = isoInvariant(graph)
+
+  # Find all graphs with the same invariant
+  cursor.execute('SELECT * FROM graphs WHERE iso_invariant = ?', (inv,))
+  rows = cursor.fetchall()
+  conn.close()
+
+  if rows:
+    print("Found",len(rows),"graph(s) with the same isomorphism invariants in database.")
+  else:
+    return
+
+  # Find exact match within candidates
+  for row in rows:
+    H = nx.from_graph6_bytes(row[1].encode())
+
+    GM = isomorphism.GraphMatcher(graph, H)
+    if GM.is_isomorphic():
+      iso_mapping = GM.mapping
+      return row, iso_mapping
+
+  print("No match found in database.")
