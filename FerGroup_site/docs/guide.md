@@ -12,8 +12,8 @@
 |`.__add__`|Shifts all labels in the chain by the integer `other`.|
 |`.tex`|Outputs a $\LaTeX$ string for use in animations or math typesetting.|
 |`.isTrivial`|Returns `#!python True` if the `fer` objects corresponds to an automorphism.|
-|`_simplify`|Shortens the chain according to simple rules, such as moving the same edge back and forth consecutively.|
-|`__mul__`|Concatenates two chains by multiplying the permutations and correctly updating the labels on the chain of edges.|
+|`._simplify`|Shortens the chain according to simple rules, such as moving the same edge back and forth consecutively.|
+|`.__mul__`|Concatenates two chains by multiplying the permutations and correctly updating the labels on the chain of edges.|
 
 !!! info
 
@@ -146,4 +146,4 @@ v_options = {'show_node_label': True,
               'many_body_force_strength': -10}
 ```
 
-[!Gravis graph](graph.svg)
+![Gravis graph](graph.svg)

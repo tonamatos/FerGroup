@@ -9,7 +9,6 @@ theme:
   name: material
   palette:
     primary: blue grey
-    accent: lime
   prev_next_buttons_location: none
   favicon: favicon.ico
   features:
