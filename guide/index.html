@@ -1,0 +1,967 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for FerGroup project">
+      
+      
+        <meta name="author" content="Tonatiuh Matos-Wiederhold">
+      
+      
+      
+        <link rel="prev" href="../install/">
+      
+      
+        <link rel="next" href="../collab/">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>User Guide - FerGroup</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="lime">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="FerGroup" class="md-header__button md-logo" aria-label="FerGroup" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FerGroup
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              User Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tonamatos/FerGroup" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="FerGroup" class="md-nav__button md-logo" aria-label="FerGroup" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FerGroup
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tonamatos/FerGroup" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes-and-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes and Algorithms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes and Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-feasible_edge_replacement-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Feasible_edge_replacement class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fer_group-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Fer_group class
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database creation:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database queries:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hypothesis-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hypothesis Testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-visualization-and-animation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Visualization and Animation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interactive Visualization and Animation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactive-plot-with-gravis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive plot with gravis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ref/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes-and-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes and Algorithms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes and Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-feasible_edge_replacement-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Feasible_edge_replacement class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fer_group-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Fer_group class
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database creation:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database queries:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hypothesis-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hypothesis Testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-visualization-and-animation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Visualization and Animation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interactive Visualization and Animation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactive-plot-with-gravis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive plot with gravis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="user-guide">User Guide</h1>
+<h2 id="classes-and-algorithms">Classes and Algorithms</h2>
+<h3 id="the-feasible_edge_replacement-class">The <code>Feasible_edge_replacement</code> class</h3>
+<table>
+<thead>
+<tr>
+<th>Attribute/Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.sequence</code></td>
+<td>The list of indidivual <code>fer</code> objects.</td>
+</tr>
+<tr>
+<td><code>.seq_perm</code></td>
+<td>Associated <code>sympy.combinatorics.permutations.Permutation</code> object.</td>
+</tr>
+<tr>
+<td><code>.__init__(old_edge, new_edge, permutation)</code></td>
+<td>Create a <span class="arithmatex"><span class="MathJax_Preview">\operatorname{fer}</span><script type="math/tex">\operatorname{fer}</script></span> chain of a single edge-replacement corresponding to the given permutation as a <code>sympy.combinatorics.permutations.Permutation</code>. Alternatively, the constructor calls an internal subclass to produce a sequence of indivual edge-replacements, but in practice this will not get much use.</td>
+</tr>
+<tr>
+<td><code>.__add__</code></td>
+<td>Shifts all labels in the chain by the integer <code>other</code>.</td>
+</tr>
+<tr>
+<td><code>.tex</code></td>
+<td>Outputs a <span class="arithmatex"><span class="MathJax_Preview">\LaTeX</span><script type="math/tex">\LaTeX</script></span> string for use in animations or math typesetting.</td>
+</tr>
+<tr>
+<td><code>.isTrivial</code></td>
+<td>Returns <code class="highlight"><span class="kc">True</span></code> if the <code>fer</code> objects corresponds to an automorphism.</td>
+</tr>
+<tr>
+<td><code>_simplify</code></td>
+<td>Shortens the chain according to simple rules, such as moving the same edge back and forth consecutively.</td>
+</tr>
+<tr>
+<td><code>__mul__</code></td>
+<td>Concatenates two chains by multiplying the permutations and correctly updating the labels on the chain of edges.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The class has no connection to any graph objects, meaning all definitions are internally algebraic. Methods are defined in the framework to verify if the <code>fer</code> objects correspond to given graphs.</p>
+</div>
+<h3 id="the-fer_group-class">The <code>Fer_group</code> class</h3>
+<p>The constructor will either compute the group using the <code>FerGroup</code> method or, if passed a valid <code>encoded</code> parameter, will invoke the <code>Fer_G.FerGroup_decoder</code>. Details on why these methods work will be included in a forthcoming research paper.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute/Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.__init__(colored_graph, encoded=None)</code></td>
+<td><code>colored_graph</code> must be a <code>NetworkX</code> Graph object, whose nodes may have the optional <code>color</code> attribute, in which case the <span class="arithmatex"><span class="MathJax_Preview">\operatorname{Fer}_c</span><script type="math/tex">\operatorname{Fer}_c</script></span> subgroup is correctly computed. If passed the <code>encoded</code> parameter, the constructor efficiently finds the <code>fer</code> generators from the corresponding permutations.</td>
+</tr>
+<tr>
+<td><code>.generators</code></td>
+<td>List of <code>sympy.combinatorics.PermutationGroup</code> object generators</td>
+</tr>
+<tr>
+<td><code>.group</code></td>
+<td><code>sympy.combinatorics.PermutationGroup</code> object associated to the <span class="arithmatex"><span class="MathJax_Preview">\operatorname{Fer}</span><script type="math/tex">\operatorname{Fer}</script></span> group.</td>
+</tr>
+<tr>
+<td><code>.automorphism</code></td>
+<td>List of <code>fer</code> objects that are automorphisms</td>
+</tr>
+<tr>
+<td><code>.non_aut</code></td>
+<td>List of <code>fer</code> objects that are not automorphisms</td>
+</tr>
+<tr>
+<td><code>.encode()</code></td>
+<td>Produces a valid <code>encoded</code> parameter with which the object can be efficiently recovered by the constructor.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Caching</p>
+<p>Most attributes are <em>cached properties</em>, and thus must only be computed once, and are then remembered forever.</p>
+</div>
+<div class="admonition bug">
+<p class="admonition-title">Colored graph</p>
+<p>Graphs with the <code>node.color</code> attribute correctly produce a valid <code>Fer_group</code> but not all features might be available in this case. Please report any bugs on the tracker.</p>
+</div>
+<h2 id="database-integration">Database Integration</h2>
+<p>The author has computed the <span class="arithmatex"><span class="MathJax_Preview">\operatorname{Fer}</span><script type="math/tex">\operatorname{Fer}</script></span> group generators of all amoeba graphs of order 1 through 10 and all amoeba trees of order 22 or less. There are 51'735 graphs, all pairwise isomorphic. These are indexed and stored as a 259MB <code>SQL</code> database freely available for download on this <a href="https://drive.google.com/file/d/1D8tSlJNjp3q9ghrYdePF0Xui86J0MYZe/view">Google Drive</a>.</p>
+<h3 id="table-structure">Table structure</h3>
+<div class="highlight"><pre><span></span><code><span class="n">graphs</span><span class="p">(</span>
+<span class="w">  </span><span class="n">id</span><span class="w">            </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">  </span><span class="n">graph6</span><span class="w">        </span><span class="nb">TEXT</span><span class="w">    </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">  </span><span class="n">iso_invariant</span><span class="w"> </span><span class="nb">TEXT</span><span class="w">    </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">  </span><span class="n">num_nodes</span><span class="w">     </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">  </span><span class="n">num_edges</span><span class="w">     </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">  </span><span class="n">is_connected</span><span class="w">  </span><span class="nb">BOOLEAN</span><span class="p">,</span>
+<span class="w">  </span><span class="n">is_tree</span><span class="w">       </span><span class="nb">BOOLEAN</span><span class="p">,</span>
+<span class="w">  </span><span class="n">is_local</span><span class="w">      </span><span class="nb">BOOLEAN</span><span class="p">,</span>
+<span class="w">  </span><span class="n">is_global</span><span class="w">     </span><span class="nb">BOOLEAN</span><span class="p">,</span>
+<span class="w">  </span><span class="n">fer_group</span><span class="w">     </span><span class="nb">BLOB</span><span class="p">,</span>
+<span class="w">  </span><span class="k">UNIQUE</span><span class="p">(</span><span class="n">graph6</span><span class="p">))</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>graph6</code></td>
+<td>See <a href="https://users.cecs.anu.edu.au/~bdm/data/formats.html">here</a> for details on how this format is handled.</td>
+</tr>
+<tr>
+<td><code>iso_invariant</code></td>
+<td>Table index consisting of a concatenation of two graph isomorphism invariants: the degree sequence and the triangle sequence of the graph (inspired by <a href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.isomorphism.fast_could_be_isomorphic.html"><code>nx.fast_could_could_be_isomorphic</code></a>) that are computed and verified efficiently. This makes finding an isomorphic copy of a given graph inside the database extremely fast.</td>
+</tr>
+<tr>
+<td><code>num_nodes</code></td>
+<td>The number of nodes.</td>
+</tr>
+<tr>
+<td><code>num_edges</code></td>
+<td>The number of edges.</td>
+</tr>
+<tr>
+<td><code>is_connected</code></td>
+<td>If the graph is connected.</td>
+</tr>
+<tr>
+<td><code>is_tree</code></td>
+<td>If the graph is connected and acyclic.</td>
+</tr>
+<tr>
+<td><code>is_local</code></td>
+<td>If the graph is a local amoeba.</td>
+</tr>
+<tr>
+<td><code>is_global</code></td>
+<td>If the graph is a global amoeba.</td>
+</tr>
+<tr>
+<td><code>fer_group</code></td>
+<td>Serialized <code>pickle</code> file encoding the generators. Finding these is by far the most expensive computation, and thus caching these values is the main purpose of the database.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Despite what some sources (e.g. ChatGPT) claim, graph6 is <strong>not</strong> a graph canonization.</p>
+</div>
+<h3 id="database-creation">Database creation:</h3>
+<p>The database can be created from scratch by either iterating over all pairwise non-isomorphic graphs generated in <a href="https://users.cecs.anu.edu.au/~bdm/nauty/"><code>nauty</code></a> and computing their <span class="arithmatex"><span class="MathJax_Preview">\operatorname{Fer}</span><script type="math/tex">\operatorname{Fer}</script></span> groups, or sifting through a <a href="https://users.cecs.anu.edu.au/~bdm/data/">database</a> such as the one created by Brendan McKay. Something similar was done in <a href="https://github.com/MarcosLaffitte/Amoebas">this repository</a> by Marcos Laffitte, who found all amoeba graphs in the same range, as part of his Masters dissertation, by counting the sizes of the Fer groups without generating them or storing the generators. The program in <code>database_fetcher.ipynb</code> allows all three options to re-create the database, but defaults to the fastest, namely the latter.</p>
+<p>The program in <code>database_maker.ipynb</code> fills in the missing data points for the database. Most importantly, it finds the graph Fer group generators consisting of a single feasible edge-replacement (which when joined with <span class="arithmatex"><span class="MathJax_Preview">\operatorname{Aut}(G)</span><script type="math/tex">\operatorname{Aut}(G)</script></span> generate the entire <span class="arithmatex"><span class="MathJax_Preview">\operatorname{Fer}</span><script type="math/tex">\operatorname{Fer}</script></span> group). The parameters can be easily modified to restrict the isomorphism finder to different matching criteria, such as isomorphisms that preserve a fixed coloring on the vertices, for example. The list of generators is compactly encoded into an array and stored for easy and efficient reconstruction of the group object.</p>
+<h3 id="database-queries">Database queries:</h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ensure that the <code>graphs.db</code> file is inside the <code>\databases\</code> folder (see the <a href="../install/">Installation</a> guide for steps to achieve this).</p>
+</div>
+<p>We showcase the usefulness of the database by querying an example answering the theoretical question:</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>What are, up to isomorphism, all connected global non-local amoebas of 8 to 10 nodes?</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">SQL</label><label for="__tabbed_1_2">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">graphs</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="s1">&#39;+</span>
+<span class="s1">        &#39;</span><span class="n">is_global</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="s1">&#39;+</span>
+<span class="s1">     &#39;</span><span class="n">is_connected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="s1">&#39;+</span>
+<span class="s1">         &#39;</span><span class="n">is_local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="s1">&#39;+</span>
+<span class="s1">  &#39;</span><span class="n">num_nodes</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sqlite3</span>
+
+<span class="c1"># Connect to database</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;databases/graphs.db&#39;</span><span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="c1"># SQL query</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM graphs WHERE &#39;</span><span class="o">+</span>
+                        <span class="s1">&#39;is_global = 1 AND &#39;</span><span class="o">+</span>
+                     <span class="s1">&#39;is_connected = 1 AND &#39;</span><span class="o">+</span>
+                         <span class="s1">&#39;is_local = 0 AND &#39;</span><span class="o">+</span>
+                  <span class="s1">&#39;num_nodes BETWEEN 8 AND 10&#39;</span><span class="p">)</span>
+
+<span class="c1"># Fetch results</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;There are </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="si">}</span><span class="s2"> many such graphs.&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="hypothesis-testing">Hypothesis Testing</h2>
+<div class="admonition info">
+<p class="admonition-title">Work in progress</p>
+</div>
+<h2 id="interactive-visualization-and-animation">Interactive Visualization and Animation</h2>
+<p>Animations are powered by the <a href="https://www.manim.community/">Manim Community</a> and adapted to the framework.</p>
+<div class="admonition info">
+<p class="admonition-title">Work in progress</p>
+</div>
+<h3 id="interactive-plot-with-gravis">Interactive plot with gravis</h3>
+<div class="highlight"><span class="filename">Installing gravis</span><pre><span></span><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">gravis</span>
+<span class="kn">import</span> <span class="nn">gravis</span> <span class="k">as</span> <span class="nn">gv</span>
+<span class="n">v_options</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;show_node_label&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+              <span class="s1">&#39;zoom_factor&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+              <span class="s1">&#39;many_body_force_strength&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">}</span>
+</code></pre></div>
+<p><a href="../graph.svg">!Gravis graph</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../install/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installation">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Installation
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../collab/" class="md-footer__link md-footer__link--next" aria-label="Next: Contributing">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Contributing
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Tonatiuh Matos-Wiederhold
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/tonamatos/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/tonamatos" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+      
+    
+  </body>
+</html>
