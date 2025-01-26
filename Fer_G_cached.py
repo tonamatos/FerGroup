@@ -1,7 +1,7 @@
 from fer_group import Fer_group
 from database_handler import db_fetch
 import pickle
-from sympy.combinatorics.permutations import Permutation as Perm 
+from sympy.combinatorics.permutations import Permutation as Perm
 
 def Fer(graph, cached=True):
   '''

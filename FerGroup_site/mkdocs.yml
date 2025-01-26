@@ -1,0 +1,56 @@
+site_name: FerGroup
+nav:
+  - Tutorial: index.md
+  - Installation: install.md
+  - User Guide: guide.md
+  - Contributing: collab.md
+  - References: ref.md
+theme:
+  name: material
+  palette:
+    primary: blue grey
+    accent: lime
+  prev_next_buttons_location: none
+  favicon: favicon.ico
+  features:
+    - content.code.copy
+    - navigation.footer
+  highlight_theme: atom-one-dark
+plugins:
+  - search
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js
+markdown_extensions:
+  - pymdownx.arithmatex
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - pymdownx.highlight:
+      use_pygments: true
+      line_spans: false
+      linenums: false
+      pygments_lang_class: false
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.blocks.caption
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/tonamatos/
+    - icon: fontawesome/brands/github
+      link: https://github.com/tonamatos
+
+copyright: Copyright &copy; 2025 Tonatiuh Matos-Wiederhold
+repo_url: https://github.com/tonamatos/FerGroup
+site_description: "Documentation for FerGroup project"
+site_author: Tonatiuh Matos-Wiederhold
