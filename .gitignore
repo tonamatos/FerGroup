@@ -1,5 +1,6 @@
 # Databases
 databases/
+connected_3plus_orbits/
 
 # Ignore shelve cache
 cache/
@@ -9,6 +10,7 @@ cache/
 
 # Tester notebooks
 tester.ipynb
+connected_3plus_orbits.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
