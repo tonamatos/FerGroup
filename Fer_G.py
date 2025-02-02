@@ -99,8 +99,7 @@ def FerGroup(colored_graph):
 
   # Nodes with missing color are defaulted to black.
   for node in nodes:
-    if not hasattr(colored_graph.nodes[node], 'color'):
-      colored_graph.nodes[node]['color'] = 'black'
+    colored_graph.nodes[node]['color'] = colored_graph.nodes[node].get('color', 'black')
 
   n = len(nodes)
   alledges = combinations(nodes, 2)
