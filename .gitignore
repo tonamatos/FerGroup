@@ -10,6 +10,7 @@ cache/
 
 # Tester notebooks
 tester.ipynb
+db_access.ipynb
 connected_3plus_orbits.ipynb
 
 # Byte-compiled / optimized / DLL files
