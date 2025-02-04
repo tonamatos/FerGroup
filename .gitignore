@@ -1,6 +1,7 @@
 # Databases
 databases/
 connected_3plus_orbits/
+connected_2plus-transitive/
 
 # Ignore shelve cache
 cache/
@@ -12,6 +13,7 @@ cache/
 tester.ipynb
 db_access.ipynb
 connected_3plus_orbits.ipynb
+connected_2plus-transitive.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
