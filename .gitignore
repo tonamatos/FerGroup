@@ -15,6 +15,10 @@ db_access.ipynb
 connected_3plus_orbits.ipynb
 connected_2plus-transitive.ipynb
 
+# Manim
+test_manim.py
+media/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
