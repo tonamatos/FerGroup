@@ -1,6 +1,6 @@
 from itertools import combinations
 from networkx.algorithms import isomorphism
-from feasible_edge_replacements import Feasible_edge_replacement as Fer
+from .feasible_edge_replacements import Feasible_edge_replacement as Fer
 from sympy.combinatorics.permutations import Permutation as Perm
 from networkx import relabel_nodes
 

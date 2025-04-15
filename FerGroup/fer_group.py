@@ -1,4 +1,4 @@
-from Fer_G import FerGroup, FerGroup_decoder
+from .Fer_G import FerGroup, FerGroup_decoder
 from sympy.combinatorics import PermutationGroup
 from functools import cached_property
 

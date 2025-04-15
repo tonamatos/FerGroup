@@ -2,4 +2,4 @@
 
 __version__ = "1.0.0"
 
-from Fer_G import FerGroup
+from .Fer_G import FerGroup
