@@ -1,3 +1,2 @@
-# FerGroup
-The comprehensive framework for the study of *Amoeba graphs* and the Fer group.
-Please visit our [official website](https://tonamatos.github.io/FerGroup/).
+Object-oriented framework for algebraic graph algorithms with custom SQL database for statistical inference.
+Please visit the [official website](https://tonamatos.github.io/FerGroup/).
