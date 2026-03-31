@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: "FerGroup"
+version: 1.0.0
+license: "MIT"
+type: software
+abstract: "Object-oriented framework for algebraic graph algorithms."
+message: "If you use this software, please cite it as below."
+authors:
+  - given-names: Tonatiuh
+    family-names: Matos-Wiederhold
+    affiliation: University of Toronto
+    orcid: "https://orcid.org/0000-0002-3142-037X"
+keywords:
+  - graph algorithms
+  - computational group theory
+  - automorphism groups
+  - algebraic graph theory
